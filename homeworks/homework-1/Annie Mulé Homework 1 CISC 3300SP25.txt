@@ -1,0 +1,22 @@
+﻿Annie Mulé Homework 1
+
+
+1. What is HTML? What does it do?
+HTML stands for hyper text markup language. HTML uses elements to organize and structure webpages to be read by a variety of devices and browsers. 
+
+
+2. Access https://www.fordham.edu/. In your own words, describe how this webpage uses
+structure to convey meaning and navigation options to the user.
+Fordham’s website uses a menu and hierarchical structure to help aid its visitors. To learn about tuition costs, the user would click the menu, and then click admissions, and then click tuition, deciding whether they want to learn about undergrad or graduate school prices. 
+
+
+3. What is an HTML element? Tag? Attribute?
+An HTML element is how the actual text is organized and is the combination of the tags and the content. Each element is made up of two tags, an opening (<>) and closing tag(</>), which alert the browser where to begin and end. Attributes provide extra information about the contents of an element, and each is made up of a name and value. 
+
+
+4. What does it mean when an element has semantic meaning? And structural meaning?
+Semantic elements show their meaning by their element type, which make it easier for browsers to understand the webpage, such as <header>. Structural elements have meaning on the structure of the page, through its organization of content, but don’t inherently have meaning by their element type, for example <div>. 
+
+
+5. What is the default behavior when submitting a HTML form?
+When the user completes a form, they press a button to send it to the server. There will be an action and a method, the action being the url, and the method being the http.
