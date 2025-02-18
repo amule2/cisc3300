@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Class Feb 18</title>
+</head>
+
+<body>
+    <div id="clickableDiv" onclick="changeText()">initial text</div>
+
+    <script>
+        function changeText() {
+            var div = document.getElementById("clickableDiv");
+            div.textContent = "added text!"; //overwrites
+            div.style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>
