@@ -1,0 +1,13 @@
+﻿Annie Mule
+CISC 3300 S25 
+Homework 4 
+1. How does an interpreted programming language differ from a compiled language? 
+An interpreted programming language has another program called the interpreter, which reads and executes the code. This means the execution speed can be a bit slower compared to compiled languages. In a compiled programming language, the program is compiled and expressed in the instructions of the target machine. 
+2. Contrast dynamically typed programming languages with statically typed ones. And contrast strongly typed programming languages with weakly typed ones. 
+Dynamic typing allows the type of a variable to change over its lifetime. The type is checked at runtime. Statically typing has the type bound to the variable. The type is checked at compile time. Weakly typed languages recognizes different data types but it is not enforced very strictly. This is compared to strongly typed languages where type is strictly enforced by the compiler. 
+3. What is the difference between var, let, and const when declaring variables in JS? 
+Const and Let are block scoped, meaning that they are only available within the block where its been declared, and they cannot be redeclared in the same scope. Const is more particular as it cannot be redeclared even in a different scope. Similarly, const cannot be changed once declared.  Var is different from these as it has global and function scoped, and it allows redeclaration. Function scope means if it's declared within a function, it will only be available within that function. Global scope means it is declared outside the function. 
+4. What are anonymous functions? Higher order functions? Callback functions? First class functions? 
+Anonymous functions are functions without a name. Higher order functions are functions that return a function or take other functions as arguments. Callback functions are functions passed as an argument to another function and executed later. First class functions are treated like any other value. 
+5. Define objects in JavaScript. 
+An object in JavaScript is a collection of properties, made up of key (name) -value pairs.
