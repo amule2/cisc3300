@@ -1,0 +1,57 @@
+﻿Annie Mule 
+CISC 3300 S25 
+Homework 5 
+
+
+1. What is the DOM? What is meant by the DOM tree?
+DOM stands for Document Object Model and is a programming interface for web documents. It helps programming languages with changing the format of a webpage through the use of nodes and objects. The DOM tree is the model of the page that is loaded. It consists of four types of nodes: document node (the page), element node (individual elements), attribute node (attributes), text nodes (or text). 
+ 
+2. What is an XSS attack? How do they work? How can you guard against them?
+XSS are Cross-Site Scripting Attacks that can happen if you add HTML to a page using innerHTML. They can be used by users if they add code to an input that will eventually be html. You can guard against them by being careful about being able to show input that came from a user and being careful about what content you treat as html. 
+
+
+3. What is an event in JavaScript? What kind of events can you respond to with code?
+An event in JavaScript is an action that happens in a browser like clicking a button. There are many event types like load, unload, keydown, keyup, click, mouseover, focus, submit. 
+
+
+4. How does a DOM eventListener work? What are the parameters it is expecting? 
+Event listeners are an approach to handling events and they can deal with more than one function at a time. It looks for the type of event to listen for like click, keydown, mouseover. It also expects the function that sound be executed when the event occurs. 
+5. What is jQuery? Why use it? How do we load jQuery onto a page? 
+jQuery is a JavaScript library that makes it easier to implement JavaScript on your website. It's used to simplify HTML, DOM manipulation and CSS for the coder. 
+
+
+6. What is AJAX? JSON? The HTTP method types and what they do? 
+AJAX stands for JavaScript And XML. It is used to continuously update web pages by exchanging data with a web server. JSON is JavaScript object notation. It is a text-based format to exchange and move data. HTTP stands for HyperText Transfer Protocol. Each HTTP request has a method. Get is used to retrieve data. Post is created to create a new resource. Put is used to replace. Patch is common for modifying resources. Delete is used to delete a resource. 
+
+
+
+
+7. Write some data in the JSON format. You can use this site https://jsonformatter.org/ to check if it’s in the right format, making use of the “validate” button. 
+
+
+{
+  "lastName": "Mule",
+  "firstName": "Annie",
+  "age": 21,
+  "email": "amule2@fordham.edu",
+  "address": {
+    "street": "2530 Hughes Avenue",
+    "city": "Bronx",
+    "state": "NY",
+    "zip": "10458"
+  }
+}
+
+
+8. Create a webpage that contains an unordered list element which contains several list item elements. If a list item is clicked, change the color of it. Each list item should have a different color. 
+9. 
+* Create a webpage that contains a button. 
+* Write jQuery code so that when the button is clicked an HTTP GET request is sent to a PHP backend. 
+* From the PHP backend(reference the php-project code found here:https://github.com/cisc3300/SP25-lecture-code/tree/main/2-20-lecture) return a json encoded associative array of data pertaining to your fake business.
+* Make sure that it has at least a name and a price. 
+* Use the response returned on the frontend to create a div element for each piece of data, show the name and price of each item and give the elements some style. 
+10. 
+* Create a webpage that contains a form element with some input elements. 
+* Write jQuery code so that when the form is submitted an HTTP POST request is sent to a PHP backend. 
+* From the PHP backend(reference the php-project code found here: https://github.com/cisc3300/SP25-lecture-code/tree/main/2-20-lecture) return an associative array with data for a success message that is JSON encoded. 
+* Use the response to create an HTML element that contains the message data, give it some proper styling.

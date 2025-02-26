@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing List</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="colorList">
+    <li style="background-color: #24468f;">A</li>
+    <li style="background-color: #208120;">B</li>
+    <li style="background-color: #e35b13;">C</li>
+    <li style="background-color: #e1d229;">D</li>
+    <li style="background-color: #821f91;">E</li>
+</ul>
+
+<script>
+    const colors= ["red","blue", "green", "white", "gray", "yellow", "orange", "pink", "magenta","lime","navy", "maroon", "fuchsia", "teal", "aqua"]
+
+    document.querySelectorAll("#colorList li").forEach(item => {
+        item.addEventListener("click", () => {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)]; // Pick a random color
+            item.style.backgroundColor = randomColor;
+        });
+    });
+</script>
+
+</body>
+</html>

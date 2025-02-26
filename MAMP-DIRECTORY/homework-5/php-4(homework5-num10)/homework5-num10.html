@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .success-message {
+            padding: 15px;
+            margin-top: 20px;
+            display: none;
+            color: #E63946FF;
+        }
+        input[type="text"], input[type="email"], textarea {
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid;
+        }
+        input[type="submit"] {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Form</h1>
+<form id="myForm">
+    <label>Name:</label>
+    <input type="text" name="name"><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email"><br><br>
+
+    <label>Message:</label>
+    <textarea name="message"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<!-- Success message container -->
+<div id="successMessage" class="success-message"></div>
+
+<script>
+    $(document).ready(function() {
+        $('#myForm').on('submit', function(event) {
+            event.preventDefault();
+
+            // Prepare form data to send
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url: 'http://localhost:8888/cats',
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        // Show success message from response
+                        $('#successMessage').text(response.message).fadeIn();
+                    } else {
+                        alert('There was an error processing the form.');
+                    }
+                },
+                error: function() {
+                    alert('An error occurred while submitting the form.');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
