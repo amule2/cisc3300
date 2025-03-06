@@ -5,12 +5,12 @@ class Post {
     public function getPosts(): array {
         return [
             [
-                'title' => 'First Post',
-                'description' => 'This is my first post description'
+                'title' => 'Annie 1',
+                'description' => 'Annie 1 description'
             ],
             [
-                'title' => 'Second Post',
-                'description' => 'This is my second post description'
+                'title' => 'Annie 2',
+                'description' => 'Annie 2 description'
             ]
         ];
     }
