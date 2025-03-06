@@ -1,9 +1,9 @@
 <?php
 namespace phpmar6\controllers;
 
-require_once __DIR__ . '../models/Post.php';
+require_once __DIR__ . '/../models/Post.php';
 
-
+use phpmar6\models\Post;
 
 class PostsController {
     public function index() {
