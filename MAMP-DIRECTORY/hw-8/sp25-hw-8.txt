@@ -1,0 +1,31 @@
+﻿CISC 3300 S25 
+Homework 8 
+1. What are sessions and cookies? What do they do? 
+Sessions keep information about a user and their preferences on the server. A cookie is a way for the browser to store data about a site visit. A cookie has the ability to access the session on each new request. 
+2. What is SQL? MySQL? What are relational databases?
+ SQL is a structured query language. Relational databases allow us to identify data in relation to another piece of data in the database. 
+
+
+3. What is normalization in SQL? 
+Normalization is organization to ensure that data isnt duplicated.
+
+
+4. What are primary and foreign keys? 
+A primary key is the field that is used to uniquely identify each record in a table. It cannot be null, has to be unique, and there can only be one per table. A foreign key is a field that references the primary key in another table. 
+
+
+5. Write statements to: 
+a. create a new database in phpmyadmin (or use the one from the in class assignment) 
+b. create a notes table, include the following columns: 
+i. id, which should be an integer type, have space for 11 characters, not be nullable, and auto increment, set the id column as the primary key 
+ii. title, which should be an varchar type, have space for 80 characters, and not be nullable 
+iii. description, which should be an text type, not be nullable 
+6. Write statements to 
+a. insert some data 
+b. update some data 
+c. delete some data 
+7. Write queries to 
+a. select all notes and order them by name in reverse alphabetical order 
+* select * from notes order by title DESC;
+b. select the second note in the table only, assume that you don’t know the ID number of it 
+c. select all notes that have descriptions which contain vowels Include SQL statements from questions 5-7 in a sql file in your submission.
