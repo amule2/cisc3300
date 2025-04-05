@@ -10,16 +10,31 @@
             a {
                 text-decoration: none;
             }
+            .search-label {
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+            .potential-classes{
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-size: 1rem;
+                font-weight: 300;
+            }
         </style>
     </head>
     <body>
-        <header>
-            Enter the Class Name:
-        </header>
+        <div class="container">
+            <div class="search-label">Enter one of the Following Classes to Learn More: </div>
+            <div class="potential-classes"> Math, English, History, PE, Science </div>
+        </div>
         <div class="container mt-3 w-25">
             <div class="row">
                 <div class="input-group mb-3">
-                    <input id="search-text" type="text" class="form-control" placeholder="search for a user" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input id="search-text" type="text" class="form-control" placeholder="search for a class" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <button id="search-button" class="btn btn-primary" type="button" id="button-addon2">Search</button>
                 </div>
             </div>
