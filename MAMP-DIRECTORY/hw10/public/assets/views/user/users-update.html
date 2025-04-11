@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Users</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/assets/styles/users-view.css">
+    </head>
+    <body>
+
+        <div class="container users-form margin-thirty">
+            <a href="http://localhost:8888/" class="link">Home</a>
+            <h2 class="margin-thirty">Edit User</h2>
+            <form id="form-id">
+                <div class="form-group margin-twenty">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" id="name"
+                           placeholder="enter first name">
+                </div>
+                <div class="form-group margin-ten">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName"
+                           placeholder="enter last name">
+                </div>
+
+                <div class="form-group margin-ten">
+                    <label for="email" id="email-label">Email</label>
+                    <input type="text" class="form-control" id="email"
+                           placeholder="Enter Email">
+                </div>
+
+                <div class="form-group margin-ten">
+                    <label for="course" id="course-label">Course</label>
+                    <input type="text" class="form-control" id="course"
+                           placeholder="Enter course">
+                </div>
+
+                <button type="submit" class="btn btn-primary submit-button margin-twenty">Submit</button>
+                <button type="button" class="btn btn-primary submit-button margin-twenty" id="delete-button">Delete Professor</button>
+
+            </form>
+
+            <div id="error-container" class="margin-ten"></div>
+        </div>
+
+        <script>
+
+            $(document).ready(function () {
+                const urlArray = window.location.pathname.split("/")
+                console.log(window.location.pathname)
+                const id = urlArray[2]
+                $.ajax({
+                    url: `http://localhost:8888/api/users/${id}`,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        const user = data[0]
+                        $('#name').val(user.name)
+                        $('#lastName').val(user.lastName)
+                        $('#email').val(user.email)
+                        $('#course').val(user.course)
+
+                    }
+                });
+
+                $('#form-id').on('submit', function (e) {
+                    const urlArry = window.location.pathname.split("/")
+                    const id = urlArry[2]
+                    e.preventDefault();
+                    const name = $('#name').val();
+                    const lastName = $('#lastName').val();
+                    const email = $('#email').val();
+                    const course = $('#course').val();
+
+                    const data = {
+                        name,
+                        lastName,
+                        email,
+                        course,
+                    }
+                    $.ajax({
+                        url: `http://localhost:8888/api/users/${id}`,
+                        type: "PUT",
+                        data: data,
+                        dataType: "json",
+                        success: function (data) {
+                            console.log("here");
+                            window.location.replace("http://localhost:8888/");
+                        },
+                        error: function (data){
+                            $('#error-container').html('')
+                            for (const property in data.responseJSON) {
+                                $('#error-container').append(` <div class='error-text'>${data.responseJSON[property]}</div>`)
+                            }
+                        }
+                    });
+                })
+                $('#delete-button').click(function () {
+                    const urlArry = window.location.pathname.split("/");
+                    const id = urlArry[2];
+                    window.location.href = `/delete-user/${id}`;
+                });
+
+
+            })
+
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Users</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/assets/styles/users-view.css">
+
+        <style>
+            .btn-primary {
+                background-color: #16d616;
+                border-color: #007bff;
+                color: white;
+                padding: 10px 20px;
+                font-size: 16px;
+                font-weight: bold;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            .btn-success {
+                background-color: #24468f;
+                border-color: #007bff;
+                color: white;
+                padding: 10px 20px;
+                font-size: 16px;
+                font-weight: bold;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+
+        </style>
+
+
+    </head>
+    <body>
+
+        <div class="container users-form margin-thirty">
+            <h2>Keep Track of Professors:</h2>
+            <a href="/new-user" class="btn-success">Add Professor</a>
+            <div id="users-container" class="margin-ten"></div>
+            <p>
+
+            </p>
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    url: `http://localhost:8888/api/users`,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#users-container').html('')
+                        $.each(data, function (key, value) {
+                            $('#users-container').append(`
+                                <div class="user-container margin-thirty">
+                                    <span class="user">${value['name']} ${value['lastName']}    </span>
+                                    <span class="user"> ${value['email']} </span>
+                                    <span class="user"> ${value['course']} </span>
+                                    <span>
+                                    <a href="users/${value['id']}" class="btn btn-primary">update</a>
+                                    </span>
+                                </div>`)
+                        });
+                    }
+                });
+
+            })
+
+
+        </script>
+
+    </body>
+</html>
